@@ -192,15 +192,29 @@
 	}
 	.navbar .container #nav ul.navbar-nav{
 		margin-left: 200px;
+		justify-content: end;
 	}
 	.navbar .container ul li a.nav-spec{
-		transition: .3s;
+		position: relative;
+		transition: .5s;
 		border-bottom-style: solid;
 		border-bottom-color: transparent;
 	}
-	.navbar .container ul li a.nav-spec:hover{
-		border-bottom-color: var(--red);
-		border-bottom-style: solid;
+	.navbar .container ul li a.nav-spec::before{
+		content: '';
+		position: absolute;
+		left:0;
+		bottom:0;
+		width:0;
+		height: 0;
+		box-sizing: border-box;
+		border-bottom: 3px solid transparent;
+		transition: all .5s ease;
+	}
+	.navbar .container ul li a.nav-spec:hover::before{
+		border-color: red;
+		width: 100%;
+		height: 100%;
 	}
 	.navbar .container ul li .dropdown ul{
 		margin-top: -2px;
@@ -216,13 +230,12 @@
 		color: var(--white);
 		padding-left: 0;
 		padding-right: 0;
-		transition: .3s;
+		transition: .5s;
 		border-bottom: 2px solid transparent;
 		display: inline;
 	}
 	.navbar .container ul li .dropdown ul li a:hover{
 		background-color: transparent;
-		border-bottom: 2px solid var(--red);
 	}
 /* end navbar */
 
@@ -670,7 +683,12 @@
 /* start media screen */
 	@media screen and (max-width: 1200px){ /* xl */
 		.navbar .container #nav ul.navbar-nav{
-			margin-left: 60px;
+			margin-left: 0;
+			padding-left: 0 !important;
+		}
+		.navbar .container ul li a.nav-spec{
+			margin: 0 .5rem !important;
+			width: auto;
 		}
 
 		#jumbotron{
@@ -733,13 +751,9 @@
 			}
 			.navbar .container ul li .dropdown ul{
 				border: none;
-				margin-top: -16px;
 			}
 			.navbar .container ul li .dropdown ul li{
 				padding-left: 8px;
-			}
-			.navbar .container ul li .dropdown ul li:last-child{
-				margin-top: -16px;
 			}
 			.navbar .container ul li .dropdown ul li a{
 				font-size: .9rem;
