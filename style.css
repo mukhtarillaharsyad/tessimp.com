@@ -578,6 +578,9 @@
 		#product-business .mb-5 .row .col-md-6 h1.pdn{
 			transform: translateY(-70%);
 		}
+		#product-business .mb-5 .row .col-md-6 h1.t-robot{
+			transform: translateY(-13%) !important;
+		}
 		#product-business .mb-5 .row .col-md-6 h1.display-1{
 			margin-right: 4px;
 			margin-left: 8px;
