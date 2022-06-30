@@ -1,7 +1,7 @@
 $(window).scroll(function(){
   if($(this).scrollTop() > 280){
     $('.topBtn').fadeIn();
-  } else{
+  }else{
     $('.topBtn').fadeOut();
   }
 });
@@ -14,14 +14,12 @@ $(".explore").click(function(){
   $('html, body').animate({scrollTop : 660}, 100);
 });
 
-
 const menu = document.getElementsByClassName('menu');
 for (let i = 0; i < menu.length; i++) {
   menu[i].addEventListener('click', function(){
     this.classList.toggle('active');
   });
 }
-
 
 const contactForm = document.getElementById('form-action');
 const loader = document.querySelector(".loader");
